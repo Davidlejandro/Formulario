@@ -1,0 +1,99 @@
+/* Estilos generales para el cuerpo de la página */
+body {
+    font-family: 'Courier New', Courier, monospace; /* Tipografía monoespaciada */
+    background: linear-gradient(to right, #1f1c2c, #928dab); /* Fondo con gradiente */
+    padding: 3rem;
+    max-width: 900px;
+    margin: auto;
+    color: #f0f0f0;
+}
+
+/* Estilo para títulos h3 */
+h3 {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ffd700; /* Amarillo dorado */
+    border-left: 5px solid #ffd700;
+    padding-left: 1rem;
+}
+
+/* Contenedor principal del formulario */
+form {
+    background: #2c2c54; /* Fondo oscuro azulado */
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Grupo de elementos del formulario */
+.form-group {
+    margin-bottom: 2rem;
+}
+
+/* Estilos para las etiquetas de los campos */
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.8rem;
+    color: #f7f1e3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Inputs y selects con nuevo diseño */
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #40407a;
+    color: #f0f0f0;
+    font-size: 1rem;
+}
+
+/* Estilos para opciones de checkbox/radio */
+.roles label, .idiomas label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #dcdde1;
+}
+
+/* Estilo para el botón de envío */
+.submit button {
+    background: linear-gradient(to right, #ff4e50, #f9d423); /* Gradiente rojo a amarillo */
+    border: none;
+    color: #000;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Hover con animación */
+.submit button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos para mensajes de error/alertas */
+.alert {
+    background: #ff6b6b;
+    color: #fff;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-left: 6px solid #c0392b;
+    border-radius: 6px;
+}
+
+/* Lista dentro de alertas */
+.alert ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
