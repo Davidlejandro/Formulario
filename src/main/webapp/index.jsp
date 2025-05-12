@@ -39,11 +39,24 @@
         <input type="text" name="username" id="username"
                value="<%= request.getParameter("username") != null ? request.getParameter("username") : "" %>" />
     </div>
-
+    <div>
+        <%
+            if(errores != null && errores.containsKey("username")){
+                out.print("<div>"+ errores.get("username")+ "</div>");
+            }
+        %>
+    </div>
     <!-- Campo para ingresar la contraseña (por seguridad no se prellena) -->
     <div class="form-group">
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" />
+    </div>
+    <div>
+        <%
+            if(errores != null && errores.containsKey("password")){
+                out.print("<div>"+ errores.get("password")+ "</div>");
+            }
+        %>
     </div>
 
     <!-- Campo para ingresar un correo electrónico válido -->
@@ -51,6 +64,13 @@
         <label for="email">Email:</label>
         <input type="email" name="email" id="email"
                value="<%= request.getParameter("email") != null ? request.getParameter("email") : "" %>" />
+    </div>
+    <div>
+        <%
+            if(errores != null && errores.containsKey("email")){
+                out.print("<div>"+ errores.get("email")+ "</div>");
+            }
+        %>
     </div>
 
     <!-- Menú desplegable para elegir un país -->
@@ -67,6 +87,13 @@
             <option value="VE" <%= "VE".equals(request.getParameter("pais"))?"selected":"" %>>Venezuela</option>
         </select>
     </div>
+    <div>
+        <%
+            if(errores != null && errores.containsKey("pais")){
+                out.print("<div>"+ errores.get("pais")+ "</div>");
+            }
+        %>
+    </div>
 
     <!-- Selección de lenguaje de programación preferido -->
     <div class="form-group">
@@ -79,6 +106,13 @@
             <option value="C++" <%= "C++".equals(request.getParameter("lenguajes"))?"selected":"" %>>C++</option>
             <option value="Angular" <%= "Angular".equals(request.getParameter("lenguajes"))?"selected":"" %>>Angular</option>
         </select>
+    </div>
+    <div>
+        <%
+            if(errores != null && errores.containsKey("lenguajes")){
+                out.print("<div>"+ errores.get("lenguajes")+ "</div>");
+            }
+        %>
     </div>
 
     <!-- Sección con checkboxes para asignar uno o más roles -->
@@ -93,7 +127,13 @@
         <label><input type="checkbox" name="roles" value="ROLE_MODERADOR"
                 <%= (request.getParameterValues("roles")!=null && java.util.Arrays.asList(request.getParameterValues("roles")).contains("ROLE_MODERADOR"))?"checked":"" %> /> Moderador</label>
     </div>
-
+    <div>
+        <%
+            if(errores != null && errores.containsKey("roles")){
+                out.print("<div>"+ errores.get("roles")+ "</div>");
+            }
+        %>
+    </div>
     <!-- Radios para escoger idioma preferido -->
     <div class="form-group idiomas">
         <label>Idiomas:</label>
@@ -101,12 +141,20 @@
         <label><input type="radio" name="idioma" value="en" <%= "en".equals(request.getParameter("idioma"))?"checked":"" %> /> Inglés</label>
         <label><input type="radio" name="idioma" value="ru" <%= "ru".equals(request.getParameter("idioma"))?"checked":"" %> /> Ruso</label>
     </div>
+    <div>
+        <%
+            if(errores != null && errores.containsKey("idioma")){
+                out.print("<div>"+ errores.get("idioma")+ "</div>");
+            }
+        %>
+    </div>
 
     <!-- Checkbox adicional para activar alguna opción especial -->
     <div class="form-group">
         <label><input type="checkbox" name="habilitar" id="habilitar"
                 <%= request.getParameter("habilitar")!=null?"checked":"" %> /> Habilitar</label>
     </div>
+
 
     <!-- Campo oculto que se envía sin que el usuario lo vea -->
     <input type="hidden" name="secreto" value="123456" />
